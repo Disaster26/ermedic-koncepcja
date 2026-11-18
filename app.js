@@ -36,5 +36,5 @@ d.querySelectorAll('[data-temat]').forEach(function(a){a.addEventListener('click
 var f=d.querySelector('form.zap');if(f)f.addEventListener('submit',function(e){e.preventDefault();var i=f.querySelector('.info');i.hidden=false});
 // mapa przy przewinięciu
 var m=d.querySelector('[data-mapa]');
-if(m&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();var fr=d.createElement('iframe');fr.src=m.dataset.mapa;fr.title='Mapa dojazdu do ERMEDIC';fr.loading='lazy';fr.referrerPolicy='no-referrer-when-downgrade';m.appendChild(fr)}},{rootMargin:'300px'});io.observe(m)}
+if(m&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();var fr=d.createElement('iframe');fr.src=m.dataset.mapa;fr.title='Mapa dojazdu do ERMEDIC';fr.loading='lazy';fr.referrerPolicy='no-referrer-when-downgrade';fr.addEventListener('load',function(){var z=m.querySelector('.zas');if(z)z.remove()});m.appendChild(fr)}},{rootMargin:'300px'});io.observe(m)}
 })();
