@@ -1,5 +1,5 @@
 (function(){
-var d=document;
+var d=document;function po(f){if(d.readyState==='complete')setTimeout(f,150);else addEventListener('load',function(){setTimeout(f,150)})}
 // menu mobilne
 var b=d.querySelector('.burger'),p=d.getElementById('panel');
 if(b&&p){b.addEventListener('click',function(){var o=p.classList.toggle('otw');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Zamknij menu':'Otwórz menu');d.body.style.overflow=o?'hidden':''});
@@ -17,7 +17,7 @@ d.querySelectorAll('[data-rzad]').forEach(function(r){ciagnij(r);var s=d.querySe
  function krok(){var c=r.firstElementChild;return c?c.getBoundingClientRect().width+(parseFloat(getComputedStyle(r).columnGap)||0):r.clientWidth}
  function stan(){bt[0].disabled=r.scrollLeft<4;bt[1].disabled=r.scrollLeft+r.clientWidth>=r.scrollWidth-4}
  bt[0].addEventListener('click',function(){r.scrollBy({left:-krok(),behavior:'smooth'})});bt[1].addEventListener('click',function(){r.scrollBy({left:krok(),behavior:'smooth'})});
- r.addEventListener('scroll',stan,{passive:true});addEventListener('resize',stan);stan()});
+ r.addEventListener('scroll',stan,{passive:true});addEventListener('resize',stan);po(stan)});
 // karuzele w kartach
 d.querySelectorAll('[data-karuzela]').forEach(function(k){var t=k.querySelector('.tor'),l=k.querySelector('.st.l'),r=k.querySelector('.st.r'),c=k.querySelector('.licz'),n=t.children.length;ciagnij(t);
  function i(){return Math.round(t.scrollLeft/t.clientWidth)}

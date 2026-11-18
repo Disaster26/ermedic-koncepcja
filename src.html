@@ -25,6 +25,7 @@ h2{font-size:clamp(28px,2.6vw,44px)}
 h3{font-size:19px;line-height:1.3}
 p{margin:0}
 .wrap{width:var(--w);margin:0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;padding:8px 12px}
 /* przycisk w kształcie zagłówka z logo */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:var(--zagb);background:var(--czer);color:#fff;font:600 17px/1.2 Jost,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
@@ -249,7 +250,7 @@ form.zap .btn{grid-column:1/-1;justify-self:start}
 <header class="top">
  <div class="wrap">
   <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="panel"><i></i><i></i><i></i></button>
-  <a class="logo" href="#" aria-label="ERMEDIC - strona główna"><svg aria-hidden="true"><use href="#m-znak"/></svg><span class="nz"><b>Er</b>Medic</span><small>Zdrowy sen, piękne wnętrze</small></a>
+  <a class="logo" href="#"><svg aria-hidden="true"><use href="#m-znak"/></svg><span class="nz"><b>Er</b>Medic</span><small>Zdrowy sen, piękne wnętrze</small></a>
   <nav class="menu" aria-label="Menu główne">
    <a href="#rehab">Łóżka rehabilitacyjne</a>
    <a href="#sypialnia">Łóżka do sypialni</a>
@@ -260,7 +261,7 @@ form.zap .btn{grid-column:1/-1;justify-self:start}
   </nav>
   <div class="akcje">
    <a class="tel" href="tel:+48661370771" aria-label="661 370 771 - zadzwoń"><svg aria-hidden="true"><use href="#i-tel"/></svg><b>661 370 771</b></a>
-   <a class="kosz" href="#rehab" aria-label="Koszyk 0 - produkty w koszyku"><em>Koszyk</em><span>0</span></a>
+   <a class="kosz" href="#rehab"><em>Koszyk</em><span>0</span><i class="sr"> produktów</i></a>
   </div>
  </div>
 </header>
@@ -416,7 +417,7 @@ form.zap .btn{grid-column:1/-1;justify-self:start}
  <div class="wrap">
   <div class="kol">
    <div>
-    <a class="logo" href="#" aria-label="ERMEDIC - strona główna"><svg aria-hidden="true"><use href="#m-znak"/></svg><span class="nz"><b>Er</b>Medic</span><small>Zdrowy sen, piękne wnętrze</small></a>
+    <a class="logo" href="#"><svg aria-hidden="true"><use href="#m-znak"/></svg><span class="nz"><b>Er</b>Medic</span><small>Zdrowy sen, piękne wnętrze</small></a>
     <p class="op">Polski producent łóżek pielęgnacyjnych, łóżek tapicerowanych i materacy. ERMEDIC Dawid Dembski, Donaborów 91L, 63-604 Baranów.</p>
    </div>
    <div><h4>Sklep</h4><ul><li><a href="#rehab">Łóżka rehabilitacyjne</a></li><li><a href="#sypialnia">Łóżka do sypialni</a></li><li><a href="#kategorie">Materace</a></li><li><a href="#kategorie">Narożniki i sofy</a></li></ul></div>
