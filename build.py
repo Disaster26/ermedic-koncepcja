@@ -12,7 +12,7 @@ for k,n,typ,naz,cena,rata,gw in P:
     sl=[]
     for i in range(1,n+1):
         w,h=Image.open(f'img/{k}{i}-560.webp').size
-        sl.append(f'<button data-lb="img/{k}{i}-800.webp" aria-label="Powiększ zdjęcie {i}"><img src="img/{k}{i}-560.webp" srcset="img/{k}{i}-560.webp 560w, img/{k}{i}-800.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1100px) 30vw, 23vw" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{typ} {naz} - zdjęcie {i}"></button>')
+        sl.append(f'<button data-lb="img/{k}{i}-800.webp" aria-label="Powiększ zdjęcie {i}"><img src="img/{k}{i}-560.webp" srcset="img/{k}{i}-360.webp 360w, img/{k}{i}-560.webp 560w, img/{k}{i}-800.webp 800w" sizes="(max-width:760px) 46vw, (max-width:1100px) 30vw, 23vw" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{typ} {naz} - zdjęcie {i}"></button>')
     nav=(f'<button class="st l" aria-label="Poprzednie zdjęcie" disabled><svg aria-hidden="true"><use href="#i-lew"/></svg></button><button class="st r" aria-label="Następne zdjęcie"><svg aria-hidden="true"><use href="#i-str"/></svg></button><span class="licz">1/{n}</span>' if n>1 else '')
     out.append(f'''   <article class="prod">
     <div class="fot" data-karuzela><div class="tor">{''.join(sl)}</div>{nav}</div>
@@ -23,7 +23,7 @@ K=[('k-rehab','Łóżka rehabilitacyjne','65 modeli i rozmiarów'),('k-tapic','�
 kat=[]
 for k,n,o in K:
     w,h=Image.open(f'img/{k}-480.webp').size
-    kat.append(f'   <a href="#kategorie"><img src="img/{k}-480.webp" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{n}"><h3>{n}</h3><span>{o}</span></a>')
+    kat.append(f'   <a href="#kategorie"><img src="img/{k}-480.webp" srcset="img/{k}-240.webp 240w, img/{k}-480.webp 480w" sizes="(max-width:560px) 56vw, (max-width:900px) 38vw, (max-width:1500px) 19vw, 13vw" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{n}"><h3>{n}</h3><span>{o}</span></a>')
 S=[('s-classic','Łóżko kontynentalne CLASSIC','Pionowo przeszywany zagłówek','2 330 zł'),('s-europa','Łóżko kontynentalne EUROPA','Zaokrąglone, pionowe przeszycia','2 370 zł'),
    ('s-elara','Łóżko kontynentalne ELARA','Gęsto pikowany zagłówek','2 320 zł'),('s-ocean','Łóżko kontynentalne OCEAN','Wysoki zagłówek z bocznymi pasami','2 350 zł'),
    ('s-deco','Łóżko kontynentalne DECO','Zagłówek z kwadratowych paneli','2 280 zł'),('s-aura','Łóżko AURA','Zagłówek z poziomych paneli','1 950 zł')]
